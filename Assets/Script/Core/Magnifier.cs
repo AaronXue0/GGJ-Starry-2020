@@ -15,6 +15,7 @@ namespace GGJ.UI
 
         public void Touched()
         {
+            Debug.Log(1);
             GameObject player = GameObject.Find("Player");
             if (Mathf.Abs(transform.position.x - player.transform.position.x) < 1)
             {
