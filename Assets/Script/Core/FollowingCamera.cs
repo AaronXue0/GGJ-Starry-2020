@@ -10,5 +10,4 @@ namespace GGJ.Core{
             transform.position = target.position;
         }
     }
-
 }

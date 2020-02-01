@@ -35,6 +35,16 @@ namespace GGJ.Backpack{
             return current;
             
         }
+        public int GetToolID(int index)
+        {
+            if (index >= 0 && index < tools.Count)
+            {
+                return tools[index].GetID();
+                
+            }
+            return 0;
+
+        }
 
         public Tool GetCurrentTool(){
             return tools[selecter];
