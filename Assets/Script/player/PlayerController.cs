@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using GGJ.Movement;
 using GGJ.Repare;
+using GGJ.Backpack;
 namespace GGJ.Control{
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]private GameObject tool;
         [SerializeField]private GameObject pro;
-        [SerializeField]private Vector3 vectical;
+   
         // Start is called before the first frame update
         void Start()
         {
@@ -18,10 +19,11 @@ namespace GGJ.Control{
         // Update is called once per frame
         void Update()
         {
-            vectical  = Sinput.GetVector("", "Vertical", "");
+            
             InteractWithMovment();
             InteractWithElevator();
             InteractWithRepare();
+            InteractWithToolSelecter();
         }
         private void InteractWithMovment(){
             GetComponent<Mover>().ForceToMove(Sinput.GetVector("Horizontal", "", ""));
@@ -35,6 +37,19 @@ namespace GGJ.Control{
                 GetComponent<User>().UseTool(tool.transform,pro.transform);
    
             }
+        }
+        private void InteractWithToolSelecter(){
+            container toolbar = GameObject.FindGameObjectWithTag("ToolBar").GetComponent<container>();
+            if(Sinput.GetButtonDown("SelectLastTool")){
+                toolbar.LastTool();
+            }
+            if (Sinput.GetButtonDown("SelectNextTool"))
+            {
+                toolbar.NextTool();
+            }
+           // if(Sinput.GetButtonDown("")){
+
+            //}
         }
     }
 }

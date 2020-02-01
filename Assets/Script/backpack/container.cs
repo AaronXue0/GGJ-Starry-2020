@@ -37,7 +37,7 @@ namespace GGJ.Backpack{
         }
         public int GetToolID(int index)
         {
-            if (index >= 0 && index < tools.Count)
+            if (index >= 0 && index < tools.Count && tools[index]!=null)
             {
                 return tools[index].GetID();
                 
