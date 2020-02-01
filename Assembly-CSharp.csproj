@@ -69,6 +69,7 @@
      <Compile Include="Assets\Script\movement\Elevator.cs" />
      <Compile Include="Assets\Script\movement\Mover.cs" />
      <Compile Include="Assets\Script\player\PlayerController.cs" />
+     <Compile Include="Assets\Script\repare\ProAnser.cs" />
      <Compile Include="Assets\Script\repare\Problem.cs" />
      <Compile Include="Assets\Script\repare\User.cs" />
      <Compile Include="Assets\Script\UI\ProblemUI.cs" />

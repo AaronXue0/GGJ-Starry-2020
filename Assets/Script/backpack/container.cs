@@ -49,7 +49,11 @@ namespace GGJ.Backpack{
             return 0;
 
         }
+        public List<Tool> GetTools()
+        {
+             return tools;
 
+        }
         public Tool GetCurrentTool(){
             return tools[selecter];
         }

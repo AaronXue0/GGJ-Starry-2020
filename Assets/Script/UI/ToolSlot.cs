@@ -20,7 +20,7 @@ namespace GGJ.UI{
             
         }
         public void SetItemImage(int toolID){
-            Debug.Log("setImage");
+            //Debug.Log("setImage");
             //Setimage
         }
         

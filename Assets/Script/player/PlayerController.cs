@@ -57,11 +57,12 @@ namespace GGJ.Control{
         private void Repare(Problem problem){
             if(Sinput.GetButtonDown("Submit")){
                 problem.gameObject.GetComponent<container>().putIn(toolBar.TakeOut(toolBar.GetSelecter()));
+                problem.checkAns(problem.gameObject.GetComponent<container>().GetTools());
             }
         }
         private void InteractWithPorblem(){
             Ray ray = new Ray(transform.position, Vector3.back * 100);
-            Debug.DrawRay(transform.position, Vector3.back * 100, Color.blue);
+            
             RaycastHit hit;
             
             if (Physics.Raycast(ray, out hit, 10))
