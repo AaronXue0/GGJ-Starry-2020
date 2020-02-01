@@ -10,7 +10,7 @@ namespace GGJ.Control{
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]ProblemUI problemUI;
-        [SerializeField]container toolBar;
+        [SerializeField]GameObject toolBar;
         Animator animator;
         bool isPicking;
         // Start is called before the first frame update
@@ -55,11 +55,27 @@ namespace GGJ.Control{
             }
         }
         private void Repare(Problem problem){
-            if(Sinput.GetButtonDown("Submit")){
+            if(Sinput.GetButtonDown("Submit"))
+            {
                 problem.GetComponent<container>().putIn(GetComponent<container>().TakeOut(GetComponent<container>().GetSelecter()));
+                
+                ChangeImg();
                 problem.checkAns(problem.gameObject.GetComponent<container>().GetTools());
             }
         }
+
+        private int ChangeImg()
+        {
+            int i = 0;
+            foreach (Tool var in GetComponent<container>().GetTools())
+            {
+                toolBar.transform.GetChild(i).GetComponent<ToolSlot>().SetItemImage(var);
+                i++;
+            }
+
+            return i;
+        }
+
         private void InteractWithPorblem(){
             Ray ray = new Ray(transform.position, Vector3.back * 100);
             
@@ -111,7 +127,7 @@ namespace GGJ.Control{
                         if(container.putIn(pickupItem)){
                             
                             Destroy(hit.collider.gameObject);
-
+                            ChangeImg();
                         }
                         else{
                             Debug.Log("full pack");

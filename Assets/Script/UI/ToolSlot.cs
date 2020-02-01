@@ -9,7 +9,7 @@ namespace GGJ.UI{
     public class ToolSlot : MonoBehaviour
     {
         [SerializeField]private int slotID;
-
+        [SerializeField]private Tool _tool;
         // Start is called before the first frame update
         void Start()
         {
@@ -21,11 +21,19 @@ namespace GGJ.UI{
         {
             
         }
+        public void FixImage(){
+            if(_tool==null) gameObject.GetComponent<Image>().sprite =Resources.Load<Sprite>("UI/Skin/UISprite.psd");
+            else gameObject.GetComponent<Image>().sprite = _tool.img;
+        }
         public void SetItemImage(Tool tool){
-            if(tool!=null)
+            if(tool!=null){
                 gameObject.GetComponent<Image>().sprite = tool.img;
-            
-
+                _tool = tool;
+            }
+            else{
+                gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Skin/UISprite.psd");
+                _tool = null;
+            }
         }
         
     }
