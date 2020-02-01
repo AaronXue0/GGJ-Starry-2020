@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: key
   m_EditorClassIdentifier: 
   id: 0
+  img: {fileID: 21300000, guid: 68fd838922b16194f8edb6950ea6a18f, type: 3}

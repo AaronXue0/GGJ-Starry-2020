@@ -56,7 +56,7 @@ namespace GGJ.Control{
         }
         private void Repare(Problem problem){
             if(Sinput.GetButtonDown("Submit")){
-                problem.gameObject.GetComponent<container>().putIn(toolBar.TakeOut(toolBar.GetSelecter()));
+                problem.GetComponent<container>().putIn(GetComponent<container>().TakeOut(GetComponent<container>().GetSelecter()));
                 problem.checkAns(problem.gameObject.GetComponent<container>().GetTools());
             }
         }
@@ -73,7 +73,7 @@ namespace GGJ.Control{
                     container container = hitObj.GetComponent<container>();
                     
                     for (int i=0; i < container.GetSize();i++){
-                        problemUI.SetSlot(container.GetToolID(i),i);
+                        problemUI.SetSlot(container.GetTool(i),i);
                     }
                     problemUI.ActiveSlots(container.GetSize());
                     Repare(hitObj.GetComponent<Problem>());
@@ -84,7 +84,7 @@ namespace GGJ.Control{
         }
         private void InteractWithToolSelecter()
         {
-            container toolbar = GetCotainer();
+            container toolbar = GetComponent<container>();
             if (Sinput.GetButtonDown("SelectLastTool"))
             {
                 toolbar.LastTool();
@@ -95,22 +95,24 @@ namespace GGJ.Control{
             }
         }
 
-        private static container GetCotainer()
-        {
-            return GameObject.FindGameObjectWithTag("ToolBar").GetComponent<container>();
-        }
+        
 
         private void InteractWithItem(){
             if(Sinput.GetButtonDown("Submit")){
                 Ray ray = new Ray(transform.position,Vector3.forward*100);
                 
                 RaycastHit hit;
-                container container = GetCotainer();
+                container container = GetComponent<container>();
                 if(Physics.Raycast(ray, out hit, 10)){
                    
                     if(hit.collider.gameObject.GetComponent<Pickable>()!=null){
-                        if(container.putIn(hit.collider.gameObject.GetComponent<Pickable>().PickUp()))
+                        Tool pickupItem = hit.collider.gameObject.GetComponent<Pickable>().PickUp();
+                        
+                        if(container.putIn(pickupItem)){
+                            
                             Destroy(hit.collider.gameObject);
+
+                        }
                         else{
                             Debug.Log("full pack");
                         }

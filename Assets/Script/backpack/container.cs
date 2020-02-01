@@ -39,14 +39,14 @@ namespace GGJ.Backpack{
             return current;
             
         }
-        public int GetToolID(int index)
+        public Tool GetTool(int index)
         {
             if (index >= 0 && index < tools.Count && tools[index]!=null)
             {
-                return tools[index].GetID();
+                return tools[index];
                 
             }
-            return 0;
+            return null;
 
         }
         public List<Tool> GetTools()

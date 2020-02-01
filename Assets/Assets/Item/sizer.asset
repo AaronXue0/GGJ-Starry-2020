@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8310aa4446acf0e47b21ea89ddf57f01, type: 3}
   m_Name: sizer
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
+  img: {fileID: 21300000, guid: 66c3d92505021b34abb12a6b02894dfc, type: 3}

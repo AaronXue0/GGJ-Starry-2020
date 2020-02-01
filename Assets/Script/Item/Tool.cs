@@ -9,6 +9,7 @@ namespace GGJ.Item
     public class Tool : ScriptableObject
     {
         [SerializeField] protected int id;
+        [SerializeField] public Sprite img;
         public int GetID()
         {
             return id;

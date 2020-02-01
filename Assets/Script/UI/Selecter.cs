@@ -21,7 +21,7 @@ namespace GGJ.UI{
         }
         private void SetSelecter(){
             GameObject toolBar  = GameObject.FindGameObjectWithTag("ToolBar");
-            transform.position = toolBar.transform.GetChild(toolBar.GetComponent<container>().GetSelecter()).position;
+            transform.position = toolBar.transform.GetChild(GameObject.FindGameObjectWithTag("Player").GetComponent<container>().GetSelecter()).position;
             
         }
     }

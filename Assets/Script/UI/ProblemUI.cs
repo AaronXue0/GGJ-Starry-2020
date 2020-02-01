@@ -18,8 +18,8 @@ namespace GGJ.UI{
         {
            
         }
-        public void SetSlot(int toolID,int index){
-            transform.GetChild(index).GetComponent<ToolSlot>().SetItemImage(toolID);
+        public void SetSlot(Tool tool,int index){
+            transform.GetChild(index).GetComponent<ToolSlot>().SetItemImage(tool);
         }
         public void ActiveSlots(int count){
             for(int i=0;i<count;i++)
