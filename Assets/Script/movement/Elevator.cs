@@ -27,6 +27,14 @@ namespace GGJ.Movement
                 {
                     isCollidredBottom = true;
                 }
+                if (hit.collider.gameObject.tag == "ElevatorMiddle")
+                {
+                    isCollidredMiddle = true;
+                }
+                if (hit.collider.gameObject.tag == "ElevatorTop")
+                {
+                    isCollidredTop = true;
+                }
             }
             else
             {
@@ -43,16 +51,40 @@ namespace GGJ.Movement
 
         public void Boost(Vector3 movement)
         {
-            if (isCollidredBottom) Debug.Log("y");
             if (isCollidredBottom && movement != Vector3.zero)
             {
-                Debug.Log(1);
                 if(movement.y > 0)
                 {
                     Transform floor = GameObject.Find("2F").transform;
-                    transform.position = new Vector3(transform.position.x, floor.position.y + transform.localScale.y * 1.1f, transform.position.z);
+                    MovePlayer(floor);
                 }
-            } 
+            }
+            else if (isCollidredMiddle)
+            {
+                if(movement.y > 0)
+                {
+                    Debug.Log(1);
+                    Transform floor = GameObject.Find("3F").transform;
+                    MovePlayer(floor);
+                }
+                else if(movement.y < 0)
+                {
+                    Debug.Log(2);
+                    Transform floor = GameObject.Find("1F").transform;
+                    MovePlayer(floor);
+                }
+            }
+            else if (isCollidredTop)
+            {
+                Debug.Log(3);
+                Transform floor = GameObject.Find("2F").transform;
+                MovePlayer(floor);
+            }
+        }
+
+        private void MovePlayer(Transform floor)
+        {
+            transform.position = new Vector3(transform.position.x, floor.position.y + transform.localScale.y * 1.1f, transform.position.z);
         }
     }
 }
