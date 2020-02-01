@@ -18,10 +18,15 @@ namespace GGJ.Control{
         void Update()
         {
             InteractWithMovment();
+            InteractWithElevator();
             InteractWithRepare();
         }
         private void InteractWithMovment(){
-            GetComponent<Mover>().ForceToMove(Sinput.GetVector("Horizontal","",""));
+            GetComponent<Mover>().ForceToMove(Sinput.GetVector("Horizontal", "", ""));
+        }
+        private void InteractWithElevator()
+        {
+            GetComponent<Elevator>().Boost(Sinput.GetVector("", "Vertical", ""));
         }
         private void InteractWithRepare(){
             if(Sinput.GetButtonDown("Use")){
