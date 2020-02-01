@@ -4,8 +4,8 @@ namespace GGJ.Repare{
         public void UseTool(Transform tool,Transform problem){
                 tool.position = problem.position;
                 tool.rotation = problem.rotation;
-                //tool = problem;
-                Debug.Log("reparing");
+                
+                Debug.Log("reparing");  
         }   
     }
 }
