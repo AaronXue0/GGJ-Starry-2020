@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+namespace GGJ.UI
 {
-    public void CloseDoor()
+    public class Door : MonoBehaviour
     {
-        GetComponent<Animator>().SetTrigger("Close");
+        public void CloseDoor()
+        {
+            GetComponent<Animator>().SetTrigger("Close");
+        }
+
+        public void OpenDoor()
+        {
+            GetComponent<Animator>().SetTrigger("Open");
+        }
     }
 
-    public void OpenDoor()
-    {
-        GetComponent<Animator>().SetTrigger("Open");
-    }
 }
