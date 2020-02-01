@@ -16,6 +16,9 @@ namespace GGJ.Backpack{
             
 
         }
+        public int GetSize(){
+            return tools.Count;
+        }
         public bool putIn(Tool tool){
             int index=0;
             for(index =0;index <tools.Count;index++){

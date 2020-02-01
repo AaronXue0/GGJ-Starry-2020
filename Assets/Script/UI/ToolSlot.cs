@@ -17,11 +17,11 @@ namespace GGJ.UI{
         // Update is called once per frame
         void Update()
         {
-            GetItemImage();
+            
         }
-        private void GetItemImage(){
-            int id = GetComponentInParent<container>().GetToolID(slotID);        
-            //getimage
+        public void SetItemImage(int toolID){
+            Debug.Log("setImage");
+            //Setimage
         }
         
     }
