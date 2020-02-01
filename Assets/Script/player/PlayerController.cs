@@ -5,19 +5,18 @@ using GGJ.Movement;
 namespace GGJ.Control{
     public class PlayerController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
-
         // Update is called once per frame
         void Update()
         {
             InteractWithMovment();
+            InteractWithElevator();
         }
         private void InteractWithMovment(){
-            GetComponent<Mover>().ForceToMove(Sinput.GetVector("Horizontal","",""));
+            GetComponent<Mover>().ForceToMove(Sinput.GetVector("Horizontal", "", ""));
+        }
+        private void InteractWithElevator()
+        {
+            GetComponent<Elevator>().Boost(Sinput.GetVector("", "Vertical", ""));
         }
     }
 }
