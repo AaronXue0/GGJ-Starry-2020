@@ -5,13 +5,23 @@ namespace GGJ.Backpack{
     public class container : MonoBehaviour {
         [SerializeField] private List<Tool> tools;
         [SerializeField] private Tool currTool;
-        
+        [SerializeField] private int selecter;
         private void Start()
         {
-
+            
         }
         private void Update()
         {
+            currTool = GetCurrentTool();
+            if (Sinput.GetButtonDown("lastool"))
+            {
+                LastTool();
+            }
+            if (Sinput.GetButtonDown("nextool"))
+            {
+                NextTool();
+            }
+            /*
             if(Sinput.GetButtonDown("tackout")){
                 int i=0;
                 while(i<tools.Count&&TakeOut(i)!=null) i++;
@@ -21,6 +31,7 @@ namespace GGJ.Backpack{
                 Debug.Log(putIn(currTool));
                 
             }
+            */
 
         }
         public bool putIn(Tool tool){
@@ -44,5 +55,18 @@ namespace GGJ.Backpack{
             
         }
 
+        public Tool GetCurrentTool(){
+            return tools[selecter];
+        }
+        public void NextTool(){
+            selecter = Mathf.Min(selecter + 1,tools.Count-1);
+        }
+        public void LastTool()
+        {
+            selecter = Mathf.Max(selecter - 1, 0);
+        }
+        public int GetSelecter(){
+            return selecter;
+        }
     }
 }

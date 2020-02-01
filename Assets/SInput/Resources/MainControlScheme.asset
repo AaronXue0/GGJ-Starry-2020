@@ -3,9 +3,8 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -38,10 +37,20 @@ MonoBehaviour:
     gamepadInputs: 01000000
     mouseInputs: 
     virtualInputs: []
-  - name: Use
+  - name: Fire1
     keyboardInputs: 22000000
     gamepadInputs: 08000000
     mouseInputs: 0c000000
+    virtualInputs: []
+  - name: Fire2
+    keyboardInputs: 24000000
+    gamepadInputs: 06000000
+    mouseInputs: 0d000000
+    virtualInputs: []
+  - name: Fire3
+    keyboardInputs: 20000000
+    gamepadInputs: 05000000
+    mouseInputs: 0e000000
     virtualInputs: []
   - name: Look Left
     keyboardInputs: 
@@ -76,16 +85,6 @@ MonoBehaviour:
   - name: Join
     keyboardInputs: 30000000
     gamepadInputs: 17000000
-    mouseInputs: 
-    virtualInputs: []
-  - name: tackout
-    keyboardInputs: 15000000
-    gamepadInputs: 
-    mouseInputs: 
-    virtualInputs: []
-  - name: putin
-    keyboardInputs: 09000000
-    gamepadInputs: 
     mouseInputs: 
     virtualInputs: []
   smartControls:
