@@ -5,5 +5,6 @@ namespace GGJ.Movement{
         public void ForceToMove(Vector3 vector){
             GetComponent<Rigidbody>().AddForce(vector*speed);
         }
+        
     }
 }
