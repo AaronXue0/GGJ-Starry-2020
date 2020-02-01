@@ -9,5 +9,8 @@ namespace GGJ.Core{
         {
             transform.position = target.position;
         }
+        private void FixedUpdate() {
+            
+        }
     }
 }

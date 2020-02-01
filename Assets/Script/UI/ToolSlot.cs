@@ -23,11 +23,6 @@ namespace GGJ.UI{
             int id = GetComponentInParent<container>().GetToolID(slotID);        
             //getimage
         }
-        private void GetSelector(){
-            int id = GetComponentInParent<container>().GetSelecter();
-            if(id == slotID){
-                //slot onSelect
-            }
-        }
+        
     }
 }

@@ -6,6 +6,7 @@ namespace GGJ.Backpack{
         [SerializeField] private List<Tool> tools;
         [SerializeField] private Tool currTool;
         [SerializeField] private int selecter;
+
         private void Start()
         {
             
@@ -50,7 +51,9 @@ namespace GGJ.Backpack{
             return tools[selecter];
         }
         public void NextTool(){
+
             selecter = Mathf.Min(selecter + 1,tools.Count-1);
+            
         }
         public void LastTool()
         {

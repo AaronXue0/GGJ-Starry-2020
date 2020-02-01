@@ -88,13 +88,13 @@ MonoBehaviour:
     gamepadInputs: 17000000
     mouseInputs: 
     virtualInputs: []
-  - name: lastool
-    keyboardInputs: 1e000000
+  - name: SelectLastTool
+    keyboardInputs: 15000000
     gamepadInputs: 
     mouseInputs: 
     virtualInputs: []
-  - name: nextool
-    keyboardInputs: 1c000000
+  - name: SelectNextTool
+    keyboardInputs: 09000000
     gamepadInputs: 
     mouseInputs: 
     virtualInputs: []
