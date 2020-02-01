@@ -17,7 +17,8 @@ namespace GGJ.Movement
 
         private void Update()
         {
-            Ray ray = new Ray(transform.position, transform.forward * 100);
+            Ray ray = new Ray(transform.position, Vector3.forward * 100);
+            Debug.DrawRay(transform.position, Vector3.forward * 100, Color.red);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10))
             {
@@ -63,20 +64,20 @@ namespace GGJ.Movement
             {
                 if(movement.y > 0)
                 {
-                    Debug.Log(1);
-                    Transform floor = GameObject.Find("3F").transform;
-                    MovePlayer(floor);
+                    if (GameObject.Find("3F").transform)
+                    {
+                        Transform floor = GameObject.Find("3F").transform;
+                        MovePlayer(floor);
+                    }
                 }
                 else if(movement.y < 0)
                 {
-                    Debug.Log(2);
                     Transform floor = GameObject.Find("1F").transform;
                     MovePlayer(floor);
                 }
             }
             else if (isCollidredTop)
             {
-                Debug.Log(3);
                 Transform floor = GameObject.Find("2F").transform;
                 MovePlayer(floor);
             }
@@ -84,7 +85,7 @@ namespace GGJ.Movement
 
         private void MovePlayer(Transform floor)
         {
-            transform.position = new Vector3(transform.position.x, floor.position.y + transform.localScale.y * 1.1f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, floor.position.y + transform.localScale.y * 0.5f, transform.position.z);
             Reset();
         }
     }

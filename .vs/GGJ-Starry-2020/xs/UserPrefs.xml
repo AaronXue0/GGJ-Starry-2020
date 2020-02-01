@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{CD9BD9F4-60EC-7062-C78F-E948ED5DFAFD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/backpack/container.cs">
+    <Files>
+      <File FileName="Assets/Script/Core/Door.cs" Line="20" Column="2" />
+      <File FileName="Assets/Script/Core/Magnifier.cs" Line="27" Column="2" />
+      <File FileName="Assets/Script/backpack/container.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GGJ-Starry-2020" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="backpack" expanded="True">
+                  <Node name="container.cs" selected="True" />
+                </Node>
+                <Node name="Camera" expanded="True" />
+                <Node name="Core" expanded="True" />
+                <Node name="Item" expanded="True" />
+                <Node name="movement" expanded="True" />
+                <Node name="player" expanded="True" />
+                <Node name="repare" expanded="True" />
+                <Node name="UI" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c7217ebb-7d9e-49a6-99af-4204267db0d9" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
