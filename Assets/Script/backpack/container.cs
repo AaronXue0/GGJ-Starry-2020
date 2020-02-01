@@ -12,27 +12,7 @@ namespace GGJ.Backpack{
         }
         private void Update()
         { 
-            /*
-            currTool = GetCurrentTool();
-            if (Sinput.GetButtonDown("lastool"))
-            {
-                LastTool();
-            }
-            if (Sinput.GetButtonDown("nextool"))
-            {
-                NextTool();
-            }
-           
-            if(Sinput.GetButtonDown("tackout")){
-                int i=0;
-                while(i<tools.Count&&TakeOut(i)!=null) i++;
-            }
-            if (Sinput.GetButtonDown("putin"))
-            {
-                Debug.Log(putIn(currTool));
-                
-            }
-            */
+            
 
         }
         public bool putIn(Tool tool){
