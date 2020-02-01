@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\backpack\container.cs" />
+     <Compile Include="Assets\Script\Item\Door.cs" />
+     <Compile Include="Assets\Script\Item\moveable.cs" />
      <Compile Include="Assets\Script\Item\Tool.cs" />
      <Compile Include="Assets\Script\movement\Mover.cs" />
      <Compile Include="Assets\Script\player\PlayerController.cs" />
