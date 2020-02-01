@@ -22,7 +22,7 @@ namespace GGJ.Movement
             if (Physics.Raycast(ray, out hit, 10))
             {
                 //Do Something.
-                Debug.Log(hit.collider.gameObject.tag);
+                //Debug.Log(hit.collider.gameObject.tag);
                 if(hit.collider.gameObject.tag == "ElevatorBottom")
                 {
                     isCollidredBottom = true;
@@ -85,6 +85,7 @@ namespace GGJ.Movement
         private void MovePlayer(Transform floor)
         {
             transform.position = new Vector3(transform.position.x, floor.position.y + transform.localScale.y * 1.1f, transform.position.z);
+            Reset();
         }
     }
 }

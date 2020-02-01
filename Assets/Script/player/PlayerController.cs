@@ -8,6 +8,7 @@ namespace GGJ.Control{
     {
         [SerializeField]private GameObject tool;
         [SerializeField]private GameObject pro;
+        [SerializeField]private Vector3 vectical;
         // Start is called before the first frame update
         void Start()
         {
@@ -17,6 +18,7 @@ namespace GGJ.Control{
         // Update is called once per frame
         void Update()
         {
+            vectical  = Sinput.GetVector("", "Vertical", "");
             InteractWithMovment();
             InteractWithElevator();
             InteractWithRepare();
