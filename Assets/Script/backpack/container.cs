@@ -4,7 +4,7 @@ using GGJ.Item;
 namespace GGJ.Backpack{
     public class container : MonoBehaviour {
         [SerializeField] private List<Tool> tools;
-        [SerializeField] private Tool currTool;
+
         [SerializeField] private int selecter;
 
         private void Start()
