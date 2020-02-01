@@ -10,6 +10,7 @@ namespace GGJ.Control{
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]ProblemUI problemUI;
+        [SerializeField]container toolBar;
         Animator animator;
         bool isPicking;
         // Start is called before the first frame update
@@ -25,12 +26,12 @@ namespace GGJ.Control{
             
             InteractWithMovment();
             InteractWithElevator();
-            InteractWithRepare();
+
             InteractWithToolSelecter();
             InteractWithItem();
             InteractWithMovment();
             InteractWithElevator();
-            InteractWithRepare();
+
             InteractWithPorblem();
             //InteractWIthPick();
         }
@@ -53,9 +54,9 @@ namespace GGJ.Control{
                 GetComponent<Elevator>().Boost(Sinput.GetVector("", "Vertical", ""));
             }
         }
-        private void InteractWithRepare(){
-            if(Sinput.GetButtonDown("Use")){
-                //GetComponent<User>().UseTool(tool.transform,pro.transform);
+        private void Repare(Problem problem){
+            if(Sinput.GetButtonDown("Submit")){
+                problem.gameObject.GetComponent<container>().putIn(toolBar.TakeOut(toolBar.GetSelecter()));
             }
         }
         private void InteractWithPorblem(){
@@ -69,11 +70,12 @@ namespace GGJ.Control{
                 if (hitObj.GetComponent<Problem>() != null)
                 {
                     container container = hitObj.GetComponent<container>();
-                    Debug.Log(container.GetSize());
+                    
                     for (int i=0; i < container.GetSize();i++){
                         problemUI.SetSlot(container.GetToolID(i),i);
                     }
                     problemUI.ActiveSlots(container.GetSize());
+                    Repare(hitObj.GetComponent<Problem>());
                     return;
                 }
             }
