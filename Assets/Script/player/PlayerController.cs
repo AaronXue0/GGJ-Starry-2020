@@ -47,9 +47,18 @@ namespace GGJ.Control{
             {
                 toolbar.NextTool();
             }
-           // if(Sinput.GetButtonDown("")){
-
-            //}
+        }
+        private void InteractWithItem(){
+            if(Sinput.GetButtonDown("Submit")){
+                Ray ray = new Ray(transform.position,Vector3.forward);
+                RaycastHit hit;
+                
+                if(Physics.Raycast(ray, out hit, 100)){
+                    if(hit.collider.gameObject.tag == "Item"){
+                        hit.collider.gameObject.GetComponent<>
+                    }
+                }
+            }
         }
     }
 }
