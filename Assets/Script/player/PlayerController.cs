@@ -83,7 +83,7 @@ namespace GGJ.Control{
 
         private void InteractWithPorblem(){
             Ray ray = new Ray(transform.position, Vector3.back * 100);
-            
+            Debug.DrawRay(transform.position, Vector3.back * 100, Color.red, 10);
             RaycastHit hit;
             
             if (Physics.Raycast(ray, out hit, 10))
@@ -121,7 +121,7 @@ namespace GGJ.Control{
         private void InteractWithItem(){
             if(Sinput.GetButtonDown("Submit")){
                 Ray ray = new Ray(transform.position,Vector3.forward*100);
-                Debug.DrawRay(transform.position, Vector3.forward * 100,Color.red,10);
+                
                 RaycastHit hit;
                 container container = GetComponent<container>();
                 if(Physics.Raycast(ray, out hit, 10)){
