@@ -19,7 +19,7 @@ namespace GGJ.UI
         public void Touched()
         {
             GameObject player = GameObject.Find("Player");
-            if (Mathf.Abs(transform.position.x - player.transform.position.x) < 1)
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < 1)
             {
                 door.OpenDoor();
                 Destroy(gameObject);
