@@ -28,6 +28,14 @@ namespace GGJ.UI
                 Destroy(gameObject);
             }
         }
+
+        public void HowToOpen()
+        {
+            if (true)
+            {
+                Touched();
+            }
+        }
     }
 
 }
