@@ -13,25 +13,31 @@ namespace GGJ.Control{
         [SerializeField]GameObject toolBar;
         Animator animator;
         bool isPicking;
+        bool isElevating;
         // Start is called before the first frame update
         void Start()
         {
             animator = GetComponent<Animator>();
             isPicking = false;
+            isElevating = false;
         }
-
         // Update is called once per frame
         void Update()
         {
-            
+            if (isPicking || isElevating)
+            {
+                return;
+            }
             InteractWithMovment();
             InteractWithElevator();
 
             InteractWithToolSelecter();
             InteractWithItem();
+            //InteractWithRepare();
+            //InteractWithToolSelecter();
+            //InteractWithItem();
             InteractWithMovment();
             InteractWithElevator();
-
             InteractWithPorblem();
             InteractWIthPick();
         }
@@ -137,9 +143,14 @@ namespace GGJ.Control{
                             Debug.Log("full pack");
                         }
                         
-                    }
-                }
-            }
+        //            }
+        //        }
+        //    }
+        //}
+        public void SetElevatorState(bool state)
+        {
+            isElevating = state;
+
         }
 
         private void InteractWIthPick()
