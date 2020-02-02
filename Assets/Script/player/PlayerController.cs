@@ -33,7 +33,7 @@ namespace GGJ.Control{
             InteractWithElevator();
 
             InteractWithPorblem();
-            //InteractWIthPick();
+            InteractWIthPick();
         }
         private void InteractWithMovment(){
             if (isPicking) return;
@@ -41,7 +41,7 @@ namespace GGJ.Control{
             if (Sinput.GetVector("Horizontal", "", "").x < 0) transform.localScale = new Vector3(1f, 1f, -1f);
             if (Sinput.GetVector("Horizontal", "", "").x > 0) transform.localScale = new Vector3(1f, 1f, 1f);
             transform.rotation = Quaternion.Euler(0, 95, 0);
-            //animator.SetFloat("Run", Mathf.Abs(Sinput.GetVector("Horizontal", "", "").x));
+            animator.SetFloat("Run", Mathf.Abs(Sinput.GetVector("Horizontal", "", "").x));
         }
         private void InteractWithElevator()
         {
