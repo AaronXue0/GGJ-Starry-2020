@@ -12,6 +12,6 @@ public class CameraContorl : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y+1, transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y+0.5f, transform.position.z);
     }
 }
