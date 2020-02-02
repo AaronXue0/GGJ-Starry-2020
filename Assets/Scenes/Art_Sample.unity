@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 2027054748}
+  distance: 1
 --- !u!114 &583496868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 832862383}
+  distance: 1
 --- !u!114 &649651658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,6 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 1235909507}
+  distance: 1
 --- !u!114 &810610280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 406836143}
+  distance: 1
 --- !u!114 &914351547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,6 +1405,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1366421266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 831284376606829961, guid: 628d1e92212861f4397fcbe544021c4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 831284375761467782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1366421271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366421266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414882ecc35c94cd3b2a8c23ed1b17c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408329759 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 831284376104278162, guid: 628d1e92212861f4397fcbe544021c4e,
@@ -1579,7 +1601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94009d2e836f49fb835506202a57f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorObject: {fileID: 948773350}
+  doorObject: {fileID: 1366421266}
+  distance: 2
 --- !u!114 &1462915645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,6 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 47842532}
+  distance: 1
 --- !u!114 &1579668560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,6 +2083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 948773350}
+  distance: 1
 --- !u!1 &1663619867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,6 +3217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 2035639655}
+  distance: 1
 --- !u!114 &1796941247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3330,6 +3356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 274073170}
+  distance: 1
 --- !u!114 &1802803852
 MonoBehaviour:
   m_ObjectHideFlags: 0

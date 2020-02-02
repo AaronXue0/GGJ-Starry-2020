@@ -11,6 +11,9 @@ namespace GGJ.UI
 
         Door door;
 
+        [SerializeField]
+        float distance = 1;
+
         private void Start()
         {
             door = doorObject.GetComponent<Door>();
@@ -19,7 +22,7 @@ namespace GGJ.UI
         public void Touched()
         {
             GameObject player = GameObject.Find("Player");
-            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < 1)
+            if (Mathf.Abs(Vector2.Distance(transform.position, player.transform.position)) < distance)
             {
                 door.OpenDoor();
                 Destroy(gameObject);
