@@ -9,7 +9,7 @@ namespace GGJ.Repare{
         {
             if(tools.Count!= items.Count) return false;
             for(int i=0;i<tools.Count;i++){
-                if(tools[i]!=items[i]) return false;
+                if(tools[i].GetID()!=items[i].GetID()) return false;
             }
 
             return true;

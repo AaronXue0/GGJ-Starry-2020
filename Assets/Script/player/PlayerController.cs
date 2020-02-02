@@ -55,25 +55,29 @@ namespace GGJ.Control{
             }
         }
         private void Repare(Problem problem){
+            
             if(Sinput.GetButtonDown("Submit"))
             {
-                problem.GetComponent<container>().putIn(GetComponent<container>().TakeOut(GetComponent<container>().GetSelecter()));
+                container proContainer = problem.gameObject.GetComponent<container>();
+                container container = GetComponent<container>();
+                proContainer.putIn(container.TakeOut(container.GetSelecter()));
+                ChangeImg(container);
+                problem.checkAns(proContainer.GetTools());
                 
-                ChangeImg();
-                problem.checkAns(problem.gameObject.GetComponent<container>().GetTools());
+            
             }
+            
         }
 
-        private int ChangeImg()
+        private void ChangeImg(container container)
         {
-            int i = 0;
-            foreach (Tool var in GetComponent<container>().GetTools())
+          
+            List<Tool> tools = container.GetTools();
+            for (int i=0;i<tools.Count;i++ )
             {
-                toolBar.transform.GetChild(i).GetComponent<ToolSlot>().SetItemImage(var);
+                toolBar.transform.GetChild(i).GetComponent<ToolSlot>().SetItemImage(tools[i]);
                 i++;
-            }
-
-            return i;
+            } 
         }
 
         private void InteractWithPorblem(){
@@ -127,7 +131,7 @@ namespace GGJ.Control{
                         if(container.putIn(pickupItem)){
                             
                             Destroy(hit.collider.gameObject);
-                            ChangeImg();
+                            ChangeImg(container);
                         }
                         else{
                             Debug.Log("full pack");

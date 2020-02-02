@@ -29,6 +29,7 @@ namespace GGJ.UI{
             if(tool!=null){
                 gameObject.GetComponent<Image>().sprite = tool.img;
                 _tool = tool;
+                return;
             }
             else{
                 gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Skin/UISprite.psd");
