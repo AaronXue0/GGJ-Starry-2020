@@ -34,7 +34,8 @@ namespace GGJ.Movement
 
         private void Update()
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y +1f, transform.position.z), Vector3.forward * 5);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z),
+                              Vector3.forward * 5);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10))
             {
@@ -104,7 +105,7 @@ namespace GGJ.Movement
 
         void EnterElevator(Transform floor, Transform targetFloor)
         {
-            transform.rotation = Quaternion.Euler(0f, 180f,0f);
+            transform.rotation = Quaternion.Euler(0f, transform.localScale.z > 0 ? 0 : -180, 0f);
             controller.SetElevatorState(true);
             StartCoroutine(DelayEnter(floor, targetFloor));
         }
@@ -128,6 +129,7 @@ namespace GGJ.Movement
         IEnumerator DelayExit1F()
         {
             yield return new WaitForSeconds(2f);
+            Faceout();
             elevator1f.GetComponent<Animator>().SetTrigger("Open");
             yield return new WaitForSeconds(1f);
             transform.position = Vector3.MoveTowards(transform.position,
@@ -136,12 +138,12 @@ namespace GGJ.Movement
             yield return new WaitForSeconds(0.5f);
             elevator1f.GetComponent<Animator>().SetTrigger("Close");
             controller.SetElevatorState(false);
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         IEnumerator DelayExit2F()
         {
             yield return new WaitForSeconds(2f);
+            Faceout();
             elevator2f.GetComponent<Animator>().SetTrigger("Open");
             yield return new WaitForSeconds(1f);
             transform.position = Vector3.MoveTowards(transform.position,
@@ -150,12 +152,12 @@ namespace GGJ.Movement
             yield return new WaitForSeconds(0.5f);
             elevator2f.GetComponent<Animator>().SetTrigger("Close");
             controller.SetElevatorState(false);
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         IEnumerator DelayExit3F()
         {
             yield return new WaitForSeconds(2f);
+            Faceout();
             elevator3f.GetComponent<Animator>().SetTrigger("Open");
             yield return new WaitForSeconds(1f);
             transform.position = Vector3.MoveTowards(transform.position,
@@ -164,7 +166,12 @@ namespace GGJ.Movement
             yield return new WaitForSeconds(0.5f);
             elevator3f.GetComponent<Animator>().SetTrigger("Close");
             controller.SetElevatorState(false);
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+
+        void Faceout()
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            transform.rotation = Quaternion.Euler(0f, 180, 0f);
         }
     }
 }

@@ -6,20 +6,22 @@ namespace GGJ.UI
 {
     public class Magnifier : MonoBehaviour
     {
+        [SerializeField]
+        GameObject doorObject;
+
         Door door;
 
         private void Start()
         {
-            door = FindObjectOfType<Door>();
+            door = doorObject.GetComponent<Door>();
         }
 
         public void Touched()
         {
-            Debug.Log(1);
             GameObject player = GameObject.Find("Player");
             if (Mathf.Abs(transform.position.x - player.transform.position.x) < 1)
             {
-                door.CloseDoor();
+                door.OpenDoor();
                 Destroy(gameObject);
             }
         }
