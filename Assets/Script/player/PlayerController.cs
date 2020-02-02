@@ -11,13 +11,14 @@ namespace GGJ.Control{
     {
         [SerializeField]ProblemUI problemUI;
         [SerializeField]GameObject toolBar;
-        Animator animator;
+        [SerializeField]Animator animator;
         bool isPicking;
         bool isElevating;
+
         // Start is called before the first frame update
         void Start()
         {
-            animator = GetComponent<Animator>();
+            //animator = GetComponent<Animator>();
             isPicking = false;
             isElevating = false;
         }
@@ -30,14 +31,8 @@ namespace GGJ.Control{
             }
             InteractWithMovment();
             InteractWithElevator();
-
             InteractWithToolSelecter();
             InteractWithItem();
-            //InteractWithRepare();
-            //InteractWithToolSelecter();
-            //InteractWithItem();
-            InteractWithMovment();
-            InteractWithElevator();
             InteractWithPorblem();
             InteractWIthPick();
         }
@@ -126,7 +121,7 @@ namespace GGJ.Control{
         private void InteractWithItem(){
             if(Sinput.GetButtonDown("Submit")){
                 Ray ray = new Ray(transform.position,Vector3.forward*100);
-                
+                Debug.DrawRay(transform.position, Vector3.forward * 100,Color.red,10);
                 RaycastHit hit;
                 container container = GetComponent<container>();
                 if(Physics.Raycast(ray, out hit, 10)){
@@ -143,10 +138,10 @@ namespace GGJ.Control{
                             Debug.Log("full pack");
                         }
                         
-        //            }
-        //        }
-        //    }
-        //}
+                   }
+                }
+            }
+        }
         public void SetElevatorState(bool state)
         {
             isElevating = state;

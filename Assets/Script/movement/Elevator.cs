@@ -34,7 +34,7 @@ namespace GGJ.Movement
 
         private void Update()
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z),
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y +1f, transform.position.z),
                               Vector3.forward * 5);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10))
@@ -112,7 +112,7 @@ namespace GGJ.Movement
 
         private void MovePlayer(Transform floor)
         {
-            transform.position = new Vector3(transform.position.x, floor.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, floor.position.y+1, transform.position.z);
             Reset();
         }
 
